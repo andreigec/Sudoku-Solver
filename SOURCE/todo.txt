@@ -1,0 +1,2 @@
+hint feature
+randomise solution to avoid worst case

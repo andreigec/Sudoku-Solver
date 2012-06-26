@@ -1,0 +1,1 @@
+SudokuSolver is an application that solves the sudoku problem.
