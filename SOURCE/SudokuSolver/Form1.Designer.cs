@@ -51,7 +51,7 @@ namespace SudokuSolver
 			this.loadbutton = new System.Windows.Forms.Button();
 			this.removepieces = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.grid = new ANDREICSLIB.PanelUpdates();
+			this.grid = new ANDREICSLIB.PanelReplacement();
 			this.menuStrip1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -317,7 +317,7 @@ namespace SudokuSolver
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox heightbox;
 		private System.Windows.Forms.Button creatematrixbutton;
-		public PanelUpdates grid;
+		public PanelReplacement grid;
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
 		public System.Windows.Forms.ToolStripMenuItem showInvalidMovesToolStripMenuItem;
 		private System.Windows.Forms.GroupBox groupBox1;

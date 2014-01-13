@@ -113,8 +113,8 @@ namespace SudokuSolver
 		{
 			var ret = new List<int>();
 			int[] h = new int[max];
-			int sqx = MathUpdates.Floor(x / square);
-			int sqy = MathUpdates.Floor(y / square);
+			int sqx = MathExtras.Floor(x / square);
+            int sqy = MathExtras.Floor(y / square);
 			sqx *= square;
 			sqy *= square;
 
@@ -130,10 +130,10 @@ namespace SudokuSolver
 			return h;
 		}
 
-		public ListUpdates<int> getPossibilities(int x, int y)
+		public List<int> getPossibilities(int x, int y)
 		{
 			int[] h = new int[max];
-			var ret = new ListUpdates<int>();
+            var ret = new List<int>();
 			var v1 = getHorizPossibilities(x, y);
 			var v2 = getVertPossibilities(x, y);
 			var v3 = getSquarePossibilities(x, y);
@@ -289,8 +289,8 @@ namespace SudokuSolver
 		private bool checkSquare(int x, int y)
 		{
 			//get the square
-			int sqx = MathUpdates.Floor(x / square);
-			int sqy = MathUpdates.Floor(y / square);
+            int sqx = MathExtras.Floor(x / square);
+            int sqy = MathExtras.Floor(y / square);
 			sqx *= square;
 			sqy *= square;
 			int me = grid[y][x];

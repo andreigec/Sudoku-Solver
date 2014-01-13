@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ANDREICSLIB;
+using ANDREICSLIB.ClassExtras;
 
 namespace SudokuSolver
 {
@@ -75,15 +76,15 @@ namespace SudokuSolver
 		{
 			int count = 0;
 			char[] sep = new char[] { ',' };
-			String ser2 = StringUpdates.replaceAllChars(serialised, "\r\n", ",");
+			String ser2 = StringExtras.ReplaceAllChars(serialised, "\r\n", ",");
 			String[] ser = ser2.Split(sep);
 
 			for (int y = 0; y < height; y++)
 			{
 				for (int x = 0; x < width; x++)
 				{
-					int gw = PanelUpdates.gap;
-					int gh = PanelUpdates.gap;
+					int gw = PanelReplacement.gap;
+                    int gh = PanelReplacement.gap;
 					if ((y + 1) % 3 != 0 || (y + 1) == 0)
 						gh = 0;
 					if ((x + 1) % 3 != 0 || (x + 1) == 0)
@@ -124,10 +125,11 @@ namespace SudokuSolver
 			int y = a.Item1;
 			matrix m = new matrix(width, height, serialise());
 			var b = m.getPossibilities(x, y);
-			String TT = b.Serialise();
+			
+            String TT =ListExtras.Serialise(b.Cast<object>().ToList());
 			if (TT.Length == 0)
 				TT = "No Options";
-			ObjectUpdates.AddToolTip(TB, TT);
+			ObjectExtras.AddToolTip(TB, TT);
 		}
 
 		public static void deSerialise(String file)
@@ -137,7 +139,7 @@ namespace SudokuSolver
 			try
 			{
 				//get width,height
-				var x = StringUpdates.splitTwoInt(SR.ReadLine(), ',');
+				var x = StringExtras.SplitTwoInt(SR.ReadLine(), ',');
 				//get matrix
 				String y = SR.ReadToEnd();
 				init(x.Item1, x.Item2, y);
@@ -267,7 +269,7 @@ namespace SudokuSolver
 
 		public static Tuple<int, int> getLocationFromName(String name)
 		{
-			return StringUpdates.splitTwoInt(name, ':');
+			return StringExtras.SplitTwoInt(name, ':');
 		}
 	}
 }
