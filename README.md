@@ -1,6 +1,6 @@
 Sudoku-Solver
 =============
-SudokuSolver is an application that solves the sudoku problem.
+SudokuSolver is an application that solves the sudoku game problem.
 
 Images
 ======
